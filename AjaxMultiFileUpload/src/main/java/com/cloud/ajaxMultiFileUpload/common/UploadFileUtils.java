@@ -67,8 +67,7 @@ public class UploadFileUtils {
 	}
 
 	private static void makeDir(String uploadPath, String... paths){    
-		if(new File(uploadPath+paths[paths.length-1]).exists()){
-			System.out.println("Fsdfs");
+		if(new File(uploadPath+paths[paths.length-1]).exists()){			
 			return;
 		}
 
@@ -79,7 +78,4 @@ public class UploadFileUtils {
 			} 
 		}
 	}
-
-
-
 }
