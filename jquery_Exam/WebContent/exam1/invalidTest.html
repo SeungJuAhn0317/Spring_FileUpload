@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(function() {
+		$("#test").on("submit", function() {
+			let 	username = $("#username").val();
+			let 	pass = $("#pass").val();
+
+			if (username == "") {
+				alert("아이디를 입력하세요");
+				$("#username").focus();
+				return false;
+			}
+
+			if (username.length < 9) {
+				alert("아이디가 너무 짧아요");
+				$("#username").focus();
+				return false;
+			}
+
+			if (pass == "") {
+				alert("패스워트를 입력하세요");
+				$("#pass").focus();
+				return false;
+			}
+
+			if (pass.length < 9) {
+				alert("패스워트가 너무 짧아요");
+				$("#pass").focus();
+				return false;
+			}
+		});
+// 	 	 $("#test").submit();     
+// 		 return true; 
+
+	});
+ 
+</script>
+
+<body>
+	<form action="/JavaScript_JQuery/confirm.jsp" method="post" name="test"
+		id="test">
+		<div>
+			<!-- 	<fieldset> 태그는 유사한 컨트롤끼리 묶을때 사용 -->
+			<!--      반드시 사용해야 하는건 아님 -->
+			<fieldset>
+				<!-- 		<legend>는 제목으로 이해하면 되고 제일 처음와야하고 한번만 사용 -->
+				<legend>유효성 테스트</legend>
+				<label for="username">아이디</label> <input type="text" id="username"
+					name="username"><br> <label for="pass">패스</label> <input
+					type="text" id="pass" name="pass"><br> <input type="submit"
+					value="로그인">
+			</fieldset>
+		</div>
+	</form>
+</body>
+</html>

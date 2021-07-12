@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+  $(function(){  
+  	$("#search").on("click",function(){
+       new daum.Postcode({            
+           oncomplete: function(data) {
+              $('#postcode1').val(data.postcode1);
+               $('#postcode2').val(data.postcode2);
+               $('#address').val(data.roadAddress);
+               $('#address_etc').focus();               
+           }
+       }).open();
+   });
+  });
+</script> 
+</head>
+<body>	
+    <input id = "postcode1" type = "text" value = "" style="width:50px;" readonly/> -
+    <input id = "postcode2" type = "text" value = "" style="width:50px;" readonly/>&nbsp;
+    <input type = "button"  id="search" value = "주소 찾기" />
+    <br/>
+    <input type="text" id = "address" name = "address" value = "" style = "width:240px;" readonly/>
+    <input type="text" id = "address_etc" name = "address_etc" value = "" style = "width:200px;"/>
+ </body>
+	
+</html>

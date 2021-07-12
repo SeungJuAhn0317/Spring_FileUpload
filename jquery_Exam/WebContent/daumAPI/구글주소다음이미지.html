@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+// 	$(document).ready(function() {
+// 		$("input[type=button]").on("click",function() {
+// 			let address = $("input[name=address]").val();
+// 			$.ajax({
+// 				url : "http://maps.googleapis.com/maps/api/geocode/json?address=" + address,
+// 				type : "get",				
+// 				data : {},
+// 				success : function(data) {
+// 					let results = data.results;
+// 					console.log(results.length);
+// 					let html = "";
+// 					html += "검색결과 : " + results.length + "건";
+// 					$.each(results,function(index,item){
+// 						let address_components=item.address_components;
+// 						let postal_code = address_components[address_components.length - 1].long_name;
+// 						let address = item.formatted_address;						
+// 						let latitude = item.geometry.location.lat;
+// 						let longitude = item.geometry.location.lng;
+						
+// 						html += "<hr>"
+// 						html += "우편번호 : " + postal_code;
+// 						html += "<br>주소 : " + address;
+// 						html += "<br>위도 : " + latitude;
+// 						html += "<br>경도 : " + longitude;
+// 					});
+				
+// // 					for(let i = 0; i < results.length; i++) {
+// // 						let address_components = results[i].address_components;
+// // 						let postal_code = address_components[address_components.length - 1].long_name;
+// // 						console.log(postal_code);
+// // 						let address = results[i].formatted_address;
+// // 						console.log(address);
+// // 						let latitude = results[i].geometry.location.lat;
+// // 						let longitude = results[i].geometry.location.lng;
+// // 						console.log(latitude);
+// // 						console.log(longitude);
+
+// // 						html += "<hr>"
+// // 						html += "우편번호 : " + postal_code;
+// // 						html += "<br>주소 : " + address;
+// // 						html += "<br>위도 : " + latitude;
+// // 						html += "<br>경도 : " + longitude;
+// // 					}
+// 					$("#result").html(html);
+// 				}
+// 			});
+// 		});
+// 	});
+		
+$(document).ready(function() {	
+	$("input[type=button]").on("click",function() {
+		$("#result").children().remove();
+		let address = $("input[name=address]").val();
+		$.ajax({
+			url : "https://apis.daum.net/search/image?apikey=2ae364685af5a89caa665fdd4aa58eca&q=" + address + "&output=json",
+			type : "get",
+			data : {},
+			dataType : "jsonp",
+			success : function(data) {				
+				let item = data.channel.item;
+				let html = "";
+				for(let i = 0; i < item.length; i++) {
+					let title = item[i].title;
+					let image = item[i].image;
+					html += "<hr>";
+					html += "<h3>"+ title+"</h3>";
+					html += "<img src=" + image + ">";
+				}
+				$("#result").html(html);				
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<input type="text" name="address" value="광안리">
+	<input type="button" value="확인">
+	<div id="result"></div>
+</body>
+</html>

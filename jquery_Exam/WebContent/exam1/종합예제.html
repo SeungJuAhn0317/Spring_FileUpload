@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+//$(document).ready(function(){
+$(function(){
+//	$("h1").css("color","red");
+	$("h1").on("mouseover",function(){
+		$("h1").css("color","green");		
+	});
+	$("h1").on("mouseout",function(){
+		$("h1").css("color","yellow");		
+	});
+// 	$("h1").on("mouseleave",function(){
+// 		$("h1").css("color","yellow");		
+// 	});
+
+//	$("*").css("color","red");
+//	alert($(".big").val());
+
+// 	$("#testButton").on("click", function(){
+	$("input[type=button]").on("click", function(){
+// 	$("input[human=1]").on("click", function(){
+// 	$("input[value=클릭]").on("click", function(){
+// 	$("input[value^=클]").on("click", function(){
+// 	$("input:button").on("click", function(){
+		test();
+	});
+});
+
+function test(){
+// 	alert($("option:selected").text());
+
+// 	let temp=$("input:checked");	
+// 	for(let i=0; i<temp.length;i++){
+// 		alert(temp[i].value);
+// 		alert($(temp[i]).val());	
+// 	}
+	
+// 	$.each(temp,function(index,item){
+// 		alert($(item).val());
+// 	});
+	
+// 	$("option").each(function(index,item){
+// 		alert($(item).text());
+// 	});
+	
+// 	var human=[1,2,3,4,5];
+// 	$.each(human,function(index, item){
+// 		alert(item);
+// 	});
+
+
+// 	필터를 이용하는 방법
+// 	alert("홀수번째 : "+$("li:odd").text());
+// 	alert("짝수번째 : "+$("li:even").text());
+//  filter()함수 이용..여러분이 편한 방법을 쓰시면 됩니다
+// 	alert("홀수번째 : "+$("li").filter(":odd").text());
+// 	alert("홀수번째 : "+$("ul>li:odd").text());
+// 	alert("홀수번째 : "+$("ul li:odd").text());
+
+// 	alert("처음 : "+$("li:first").text());
+// 	alert("처음 : "+$("li").first().text());
+// 	$("li:first").css("background","red").css("color","yellow");
+// 	$("li:first").css({background:"red",color:"yellow"});
+// 	$("li:first").css({"background":"red","color":"yellow"});
+// 	$("li:first").css({backgroundColor:"red",color:"yellow"});
+// 	alert("마지막 : "+$("li:last").text());
+// 	alert("마지막 : "+$("li").last().text());
+
+// 	자식 태그선택
+// 	alert($("li").eq(3).text());
+// 	alert($("ul > li").eq(3).text());
+// 	alert($("ul li").eq(3).text());
+// 	alert($("ul").children().eq(3).text());
+//  요소:nth-child()의 경우는 인덱스가 1부터 시작
+	alert($("li:nth-child(2n+1)").text());
+// 	alert($("li:nth-child(3n+1)").text());
+
+// 	$("img").attr("src","b.jpg");
+// 	$("img").prop("src","b.jpg");
+// 	alert($("img").prop("src"));
+
+//  filter()이용법
+// 	$("li").filter(function(index){
+// 			return index % 2==0;
+// 				  }).css({"background":"red","color":"yellow"});
+}
+</script>
+</head>
+<body>
+<h1>이것은</h1><br />
+<h2>입니다</h2>
+    
+	<form action="/JavaScript_JQuery/result.jsp" method="post" id="testForm">
+	   <h1>두번째</h1>
+		<select id="test" >
+	    	<option>1</option>
+	    	<option>2</option>
+	    	<option>3</option>
+	    	<option>4</option>
+	    	<option>5</option>
+	    </select>
+	    <ul>
+	    	<li>z</li>
+	    	<li>x</li>
+	    	<li>c</li>
+	    	<li>v</li>
+	    	<li>b</li>
+	    	<li>n</li>
+	    	<li>m</li>
+	    </ul>
+	    <label for="first"><input type="checkbox" id="first" value="rrrr">첫번째 체크박스</label>&nbsp;&nbsp;&nbsp;    	
+    	<input type="checkbox" value="second">두번째 체크박스&nbsp;&nbsp;&nbsp;
+    	<input type="checkbox" value="third">세번째 체크박스&nbsp;&nbsp;&nbsp;
+    	<input type="checkbox" value="fourth">네번째 체크박스&nbsp;&nbsp;&nbsp;
+    	<input type="checkbox" value="fifth">5번째 체크박스<br />   
+    	<input type="radio" value="circle1">동그라미1    	
+    	<input type="radio" value="circle2">동그라미2<br />    	
+    	<input type="text" class="big" value="클래스 선택자 실습">	
+		<input type="text" name="id" id="id" placeholder="아이디를 입력하세요"><br />	
+		<input type="text" name="pass" id="pass" ><br />  
+		<input type="button" value="클릭" human="1" id="testButton">
+
+		<img src="a.bmp">			
+	</form>
+</body>
+</html>

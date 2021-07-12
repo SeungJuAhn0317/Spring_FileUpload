@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<!-- <script src="script/test.js"> </script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+function test(){
+// 	let id=document.getElementById("id").value;
+// 	let pass=document.getElementById("pass").value;
+// 	let html="<table border='1'>";
+// 	html +="<tr><td>"+id+"</td></tr>";
+// 	html +="<tr><td>"+pass+"</td></tr>";
+// 	html +="</table>";	
+// 	document.getElementById("print").innerHTML=html;
+	
+	let id=$("#id").val();
+	let pass=$("#pass").val();
+	let html="<table border='1'>";
+	html +="<tr><td>"+id+"</td></tr>";
+	html +="<tr><td>"+pass+"</td></tr>";
+	html +="</table><br />";
+	alert($("#print").text());
+// 	$("#print").text(html);
+	$("#print").html(html);
+}  
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="id" placeholder="아이디를 입력하세요"><br />	
+		<input type="text" id="pass"><br />
+<!-- 		<button onclick="test()">클릭</button><br /> -->
+<!-- 		<button>태그가 폼태그안에있으면 무조건 submit됨 -->
+<!-- 		 해결방법  -->
+<!-- 		 1. <button>를 폼태그 바깥으로 뺀다 -->
+<!-- 		 2. <input type="button">으로 대체 -->
+<!-- 		 3. <button type="button">처럼 type="button" 속성을 사용 -->
+<!-- 		<button type="button" onclick="test()">클릭</button><br />		     -->
+		<input type="button" onclick="test()" value="클릭"><br />			
+		<div id="print">여기에 출력
+		</div>
+	</form>
+	
+</body>
+</html>

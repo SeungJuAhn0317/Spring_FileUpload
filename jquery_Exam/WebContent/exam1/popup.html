@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Select A Option in A Select Box</title>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+	function setTag() {
+		let html = $("input[type=text]").val();	
+		window.opener.appendTag(html);
+		window.close();
+	}
+</script>
+</head>
+
+<body>
+    팝업창에서 열리는 ..팝업 파일입니다
+	<div>
+		<input type="text" name="a" /> 		
+	</div>	
+	<input type="button" value="run" onclick="setTag()" />
+</body>
+</html>

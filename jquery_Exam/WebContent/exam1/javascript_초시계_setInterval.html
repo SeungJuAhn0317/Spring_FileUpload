@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="UTF-8" />
+  <script type="text/javascript">
+	let interval;
+	function ready() {
+		interval = setInterval(Timer,1000);		
+	}
+
+	function Timer() {
+		var now = new Date();
+		var H = now.getHours();
+		var M = now.getMinutes();
+		var S = now.getSeconds();
+		myForm.myText.value = "지금은 " + H + "시" + M + "분" + S + "초";
+	}
+
+	function stopInterval(){
+		clearInterval(interval);
+	}
+
+	ready();
+  </script>
+ </head>
+
+ <body>
+  <form name="myForm">
+	<input type="text" name="myText" style="text-align:center">
+	<input type="button" value="Stop" onclick="stopInterval()">
+  </form>
+ </body>
+</html>

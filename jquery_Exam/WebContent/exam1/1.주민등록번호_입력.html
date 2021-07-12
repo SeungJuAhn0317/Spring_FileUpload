@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("input[name=jumin1]").on("keyup",function(){
+			//자바스크립트 코드
+// 			if(this.value.length==6){
+// 				$("input[name=jumin2]").focus()
+// 			}
+       // 제이쿼리 코드
+		if($(this).val().length==6){
+				$("input[name=jumin2]").focus()
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	주민번호 : <input type="text" name="jumin1" maxlength="6" 
+	onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" /> 
+	- 
+	<input type="text" name="jumin2" maxlength="7" 
+	onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" />
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

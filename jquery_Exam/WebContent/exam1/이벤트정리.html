@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Document</title>
+<meta charset="UTF-8" />
+<script type="text/javascript">
+/*
+	onblur			입력양식에서 포커스가 다른 곳으로 이동 했을 때
+	onclick			입력양식이나 링크를 마우스로 클릭했을 때 
+	onfocus			입력양식 필드로 포커스가 들어왔을 때
+	onload			브라우저에서 문서가 읽혀 졌을 때
+	onmouseover		링크위로 마우스가 지나갔을 때 
+	onselect		입력양식의 한 필드를 선택했을 때
+	onsubmit		입력양식을 서버로 보낼 때
+	onunload		브라우저에서 문서가 없어졌을 때
+	onabort			이미지를 읽다가 중단시켰을 때
+	onerror     	문서나 이미지를 읽다가 에러가 발생했을 때
+	onmouseout		마우스가 링크나 특정영역안에 있다가 나갔을 때
+	onreset			입력양식에서 리셋 시켰을 때
+	ondblclick		마우스를 더블클릭 했을 때
+	ondragdrop		마우스를 클릭한 상태에서 움직였을 때
+	onkeydown		키를 입력했을 때
+	onkeypress		키를 눌렀을 때
+	onkeyup			키를 눌렀다 놓았을 때
+	onmousedown		마우스 버튼을 눌렀을 때 
+	onmousemove		마우스를 움직였을 때
+	onmouseup		마우스버튼을 눌렀다 놓았을 때 
+	onmove			윈도우나 프레임을 움직였을 때
+	onresize		윈도우나 프레임의 크기를 변경하였을때
+*/
+
+
+	function _event(eventType, e){
+		console.log("이벤이벤 : " + eventType);
+
+		if( e && e.keyCode == 13){
+			console.log("엔터키 입력");
+		}
+}
+  </script>
+</head>
+
+<body onload="_event('onload')" ondblclick="_event('ondbclick')">
+	<p onmouseover="_event('onmouseover')"
+		onmouseout="_event('onmouseout')">Javascript Event</p>
+
+	<input type="text" value="onblur & onfocus" onblur="_event('onblur')"
+		onfocus="_event('onfocus')">
+
+	<input type="button" value="onclick" onclick="_event('onclick')">
+
+	<input type="text" value="" onkeydown="_event('other Key', event)">
+</body>
+</html>

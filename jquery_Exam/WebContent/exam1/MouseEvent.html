@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+	    $("img").on("mousemove",function(event) {
+	        console.log("x : " + event.pageX + " / y : " + event.pageY);
+	    });
+	}); 
+</script>
+</head>
+
+<body>
+<img src="5-2.jpg" id="image">
+</body>
+</html>

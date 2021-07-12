@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Change Size</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	/**
+	 * 대상 : div
+	 * 기능 : 크기 변경 
+	 * 함수 : css() / width(), height()
+	 */
+	function run() {		
+// 		 $("#target").width("300px");
+//		 $("#target").height("200px");
+	 		 $("#target").css({"width":"300", "height":"200"});
+// 	 	 $("#target").width($("#target").width()*2);
+//			 $("#target").height($("#target").height()*2)
+	}
+</script>
+
+</head>
+
+<body>
+	<div id="target"
+		style="color: rgb(255, 255, 255); width: 150px; height: 100px; float: left; border: 1px solid rgb(34, 34, 34); background-color: rgb(143, 188, 143); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#target<br>
+	</div>
+	<input type="button" value="run" onclick="run()" />
+</body>
+</html>

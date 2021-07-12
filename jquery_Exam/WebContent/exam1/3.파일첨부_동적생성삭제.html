@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	    $(function(){
+	    	$("#delFile").hide();
+	    });
+		function fnAddFile(event){
+			event.preventDefault();
+			event.stopPropagation();
+			let addHtml = "<input type='file' name='file' /><br />";
+			$(addHtml).appendTo("body");
+			$("#delFile").show();
+		}
+		
+		function fnDelFile(event){
+			event.preventDefault();
+			event.stopPropagation();
+			$("input[type=file]").last().remove();
+			$("br").last().remove();
+			let fileLength = $("input[type=file]").length;
+			if(fileLength == 1) {
+				$("#delFile").hide();
+			}
+		}
+	
+	</script>
+</head>
+<body>
+	<input type="file" name="file" /> 
+	<a href="http://www.google.com" id="addFile" onclick="fnAddFile(event)">파일추가</a> 
+	<a href="#" id="delFile" onclick="fnDelFile(event)">삭제</a>
+	<br />
+	
+</body>
+
+</html>

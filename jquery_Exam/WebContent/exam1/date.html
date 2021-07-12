@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var d = new Date();
+	var year = d.getFullYear();
+	var month = d.getMonth() + 1;
+	var day = d.getDate();
+	var h = d.getHours();
+	var m = d.getMinutes();
+	var s = d.getSeconds();
+	
+	alert(year + "년 " + month + "월 " + day + "일 " + h + ":" + m + ":" + s);
+	
+	d.setDate(day + 25);
+	day = d.getDate();
+
+	alert(year + "년 " + month + "월 " + day + "일 " + h + ":" + m + ":" + s);	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

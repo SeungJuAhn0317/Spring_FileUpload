@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("input[name=title]").focus();
+		$("input[type=button").on("click",function(){
+			let title= $("input[name=title]").val();
+			let content= $("input[name=content]").val();
+			let owner= $("input[name=owner]").val();
+			let result="<tr><td>"+ title+"</td>"
+           				 +"<td>"+ content+"</td>"
+           				 +"<td>"+ owner+"</td></tr>";
+           				
+			$(result).appendTo("table");
+			$("input[type=text]").val("");
+			$("input[name=title]").focus();			
+		});
+	});
+	</script>
+</head>
+<body>
+	<fieldset>
+		<legend>입력하시오</legend>
+		<label for="title">제목 : </label>
+		<input type="text" name="title" id="title"/><br />
+		<label for="content">내용 : </label>
+		<input type="text" name="content" id="content"/><br />
+		<label for="owner">작성자:</label> 
+		<input type="text" name="owner" id="owner"/><br />
+		<input type="button" name="btn" value="테이블에추가" />	
+	</fieldset>
+	
+	<table border="1">
+		<tr>
+			<td>제목</td>
+			<td>내용</td>
+			<td>작성자</td>
+		</tr>
+		
+	</table>
+</body>
+
+</html>
